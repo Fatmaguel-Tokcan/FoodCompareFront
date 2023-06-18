@@ -1,35 +1,20 @@
-<template>
-  <div class="home">
-    <img>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
-</template>
+
+
+  <template>
+    <div>
+      <input v-model="food1" type="text" placeholder="Lebensmittel 1">
+      <input v-model="food2" type="text" placeholder="Lebensmittel 2">
+      <button @click="compareFoods">Vergleichen</button>
+      <div v-if="comparisonResult">
+        <p>{{ food1 }} vs. {{ food2 }}</p>
+        <p>{{ comparisonResult }}</p>
+      </div>
+    </div>
+  </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/FoodCompare.vue'
 
-export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
-}
-</script>
-
-<template>
-  <div>
-    <input v-model="food1" type="text" placeholder="Lebensmittel 1">
-    <input v-model="food2" type="text" placeholder="Lebensmittel 2">
-    <button @click="compareFoods">Vergleichen</button>
-    <div v-if="comparisonResult">
-      <p>{{ food1 }} vs. {{ food2 }}</p>
-      <p>{{ comparisonResult }}</p>
-    </div>
-  </div>
-</template>
-
-<script>
 export default {
   data() {
     return {

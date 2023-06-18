@@ -29,9 +29,11 @@ export default {
   },
   methods: {
     compareFoods() {
-  // Hier den API-Aufruf an das Backend implementieren, um die Nährwerte zu vergleichen
-  // Verwende dazu z.B. die 'fetch' Funktion von JavaScript oder eine andere geeignete Bibliothek
-}
-}
+    // Hier den API-Aufruf an das Backend implementieren, um die Nährwerte zu vergleichen
+    // Verwende dazu z.B. die 'fetch' Funktion von JavaScript oder eine andere geeignete Bibliothek
+
+
+    }
+  }
 };
 </script>
