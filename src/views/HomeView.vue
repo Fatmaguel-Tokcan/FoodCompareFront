@@ -6,15 +6,7 @@
     <button class="button" @click="calculateBMI">BMI berechnen</button>
     <button class="button" @click="navigateToGerichte">Gerichte</button>
     <button class="button" @click="navigateToMealPlanner">Meal Planer</button>
-
-    <input v-model="food1" type="text" placeholder="Lebensmittel 1">
-    <input v-model="food2" type="text" placeholder="Lebensmittel 2">
-    <button @click="compareFoods">Vergleichen</button>
-    <div v-if="comparisonResult">
-      <p>{{ food1 }} vs. {{ food2 }}</p>
-      <p>{{ comparisonResult }}</p>
     </div>
-  </div>
 </template>
 
 <script setup>
