@@ -1,43 +1,63 @@
+<template>
+  <div class="container">
+    <h1>Willkommen auf unserer Ernährungswebseite!</h1>
+    <p>Hier kannst du deinen BMI berechnen, einen Essensplan für die Woche erstellen und eine Einkaufsliste generieren.</p>
 
+    <button class="button" @click="calculateBMI">BMI berechnen</button>
+    <button class="button" @click="navigateToGerichte">Gerichte</button>
+    <button class="button" @click="navigateToMealPlanner">Meal Planer</button>
 
-  <template>
-    <div>
-      <input v-model="food1" type="text" placeholder="Lebensmittel 1">
-      <input v-model="food2" type="text" placeholder="Lebensmittel 2">
-      <button @click="compareFoods">Vergleichen</button>
-      <div v-if="comparisonResult">
-        <p>{{ food1 }} vs. {{ food2 }}</p>
-        <p>{{ comparisonResult }}</p>
-      </div>
+    <input v-model="food1" type="text" placeholder="Lebensmittel 1">
+    <input v-model="food2" type="text" placeholder="Lebensmittel 2">
+    <button @click="compareFoods">Vergleichen</button>
+    <div v-if="comparisonResult">
+      <p>{{ food1 }} vs. {{ food2 }}</p>
+      <p>{{ comparisonResult }}</p>
     </div>
-  </template>
+  </div>
+</template>
 
-<script>
-// @ is an alias to /src
+<script setup>
+import { useRouter } from 'vue-router';
 
-export default {
-  data() {
-    return {
-      food1: '',
-      food2: '',
-      comparisonResult: ''
-    };
-  },
-  methods: {
-    compareFoods() {
-      if (this.food1 && this.food2) {
-        // Hier kannst du deine Vergleichsfunktion implementieren
-        // Beispiel: Vergleich von Längen der Lebensmittelnamen
-        if (this.food1.length > this.food2.length) {
-          this.comparisonResult = `${this.food1} ist länger als ${this.food2}`;
-        } else if (this.food1.length < this.food2.length) {
-          this.comparisonResult = `${this.food2} ist länger als ${this.food1}`;
-        } else {
-          this.comparisonResult = 'Beide Lebensmittel haben die gleiche Länge';
-        }
-      }
-    }
-  }
-};
+const router = useRouter();
+
+function calculateBMI() {
+  // Hier kannst du die Logik zur BMI-Berechnung implementieren
+  // Zum Beispiel: router.push('/bmi-calculator');
+  router.push('/bmi-calculator'); // Beispiel-Navigation zum BMI-Calculator
+}
+
+function navigateToGerichte() {
+  // Hier kannst du die Logik zum Navigieren zur Gerichte-Seite implementieren
+  // Zum Beispiel: router.push('/meals');
+  router.push('/gerichte'); // Beispiel-Navigation zur Gerichte-Seite
+}
+
+function navigateToMealPlanner() {
+  // Hier kannst du die Logik zum Navigieren zur Meal Planner-Seite implementieren
+  // Zum Beispiel: router.push('/meal-planner');
+  router.push('/meal-planner'); // Beispiel-Navigation zur Meal Planner-Seite
+}
 </script>
 
+<style>
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.button {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+</style>

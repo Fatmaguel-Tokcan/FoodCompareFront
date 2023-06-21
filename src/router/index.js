@@ -8,20 +8,19 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/bmi',
+    name: 'bmi',
+    component: () => import(/* webpackChunkName: "about" */ '../views/BmiView.vue')
   },
   {
-    path: '/foods',
-    name: 'foods',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/FoodStorage.vue')
+    path: '/recipes',
+    name: 'recipes',
+    component: () => import(/* webpackChunkName: "about" */ '../views/RecipesView.vue')
+  },
+  {
+    path: '/meal-planner', // Pfad zur Meal Planner Seite
+    name: 'meal-planner', // Name der Route
+    component: () => import(/* webpackChunkName: "meal-planner" */ '../views/MealPlannerView.vue') // Komponente für den Meal Planner
   }
 ]
 
