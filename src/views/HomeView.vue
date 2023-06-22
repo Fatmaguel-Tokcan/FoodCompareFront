@@ -3,33 +3,43 @@
     <h1>Willkommen auf unserer Ernährungswebseite!</h1>
     <p>Hier kannst du deinen BMI berechnen, einen Essensplan für die Woche erstellen und eine Einkaufsliste generieren.</p>
 
-    <button class="button" @click="calculateBMI">BMI berechnen</button>
-    <button class="button" @click="navigateToGerichte">Gerichte</button>
-    <button class="button" @click="navigateToMealPlanner">Meal Planer</button>
-    </div>
+    <button class="button" @click="navigateToBMI">BMI berechnen</button>
+    <button class="button" @click="navigateToRecipes">Recipes</button>
+    <button class="button" @click="navigateToMealPlanner">Meal Planner</button>
+    <button class="button" @click="navigateToShoppingList">Shopping List</button>
+  </div>
 </template>
 
-<script setup>
+<script>
 import { useRouter } from 'vue-router';
 
-const router = useRouter();
+export default {
+  setup() {
+    const router = useRouter();
 
-function calculateBMI() {
-  // Hier kannst du die Logik zur BMI-Berechnung implementieren
-  // Zum Beispiel: router.push('/bmi-calculator');
-  router.push('/bmi-calculator'); // Beispiel-Navigation zum BMI-Calculator
-}
+    function navigateToBMI() {
+      router.push('/bmi');
+    }
 
-function navigateToGerichte() {
-  // Hier kannst du die Logik zum Navigieren zur Gerichte-Seite implementieren
-  // Zum Beispiel: router.push('/meals');
-  router.push('/gerichte'); // Beispiel-Navigation zur Gerichte-Seite
-}
+    function navigateToRecipes() {
+      router.push('/gerichte');
+    }
 
-function navigateToMealPlanner() {
-  // Hier kannst du die Logik zum Navigieren zur Meal Planner-Seite implementieren
-  // Zum Beispiel: router.push('/meal-planner');
-  router.push('/meal-planner'); // Beispiel-Navigation zur Meal Planner-Seite
+    function navigateToMealPlanner() {
+      router.push('/meal-planner');
+    }
+
+    function navigateToShoppingList() {
+      router.push('/shopping-list');
+    }
+
+    return {
+      navigateToBMI,
+      navigateToRecipes,
+      navigateToMealPlanner,
+      navigateToShoppingList
+    };
+  }
 }
 </script>
 

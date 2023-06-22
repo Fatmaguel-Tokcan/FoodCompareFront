@@ -21,6 +21,11 @@ const routes = [
     path: '/meal-planner', // Pfad zur Meal Planner Seite
     name: 'meal-planner', // Name der Route
     component: () => import(/* webpackChunkName: "meal-planner" */ '../views/MealPlannerView.vue') // Komponente für den Meal Planner
+  },
+  {
+    path: '/shopping-list', // Pfad zur Shopping List Seite
+    name: 'shopping-list', // Name der Route
+    component: () => import(/* webpackChunkName: "shopping-list" */ '../views/ShoppingListView.vue') // Komponente für den Shopping List
   }
 ]
 

@@ -15,15 +15,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="gericht in gerichte" :key="gericht.id">
-          <td>{{ gericht.id }}</td>
-          <td>{{ gericht.name }}</td>
-          <td>{{ gericht.minutes }}</td>
-          <td>{{ gericht.tags }}</td>
-          <td>{{ gericht.nutrition }}</td>
-          <td>{{ gericht.steps }}</td>
-          <td>{{ gericht.description }}</td>
-          <td>{{ gericht.ingredients }}</td>
+        <tr v-for="recipes in recipes" :key="recipes.id">
+          <td>{{ recipes.id }}</td>
+          <td>{{ recipes.name }}</td>
+          <td>{{ recipes.minutes }}</td>
+          <td>{{ recipes.tags }}</td>
+          <td>{{ recipes.nutrition }}</td>
+          <td>{{ recipes.steps }}</td>
+          <td>{{ recipes.description }}</td>
+          <td>{{ recipes.ingredients }}</td>
         </tr>
       </tbody>
     </table>
@@ -34,19 +34,19 @@
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
 
-const gerichte = ref([]);
+const recipes = ref([]);
 
-const fetchGerichte = () => {
-  axios.get('/gerichte')
+const fetchRepices = () => {
+  axios.get('http://localhost:5000/gericht')
     .then(response => {
-      gerichte.value = response.data;
+      recipes.value = response.data;
     })
     .catch(error => {
       console.error(error);
     });
 };
 
-onMounted(fetchGerichte);
+onMounted(fetchRepices);
 </script>
 
 <style scoped>

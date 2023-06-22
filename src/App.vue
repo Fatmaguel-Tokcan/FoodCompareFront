@@ -6,6 +6,7 @@
         <li><router-link to="/bmi">BMI</router-link></li>
         <li><router-link to="/recipes">Recipes</router-link></li>
         <li><router-link to="/meal-planner">Meal Planner</router-link></li> 
+        <li><router-link to="/shopping-list">Shopping List</router-link></li> 
       </ul>
     </nav>
     
@@ -17,6 +18,7 @@
 nav {
   background-color: #f0f0f0;
   padding: 10px;
+  width: 10%; /* Hier wird die Breite auf 10% festgelegt */
 }
 
 ul {
@@ -26,18 +28,18 @@ ul {
 }
 
 li {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-li:last-child {
-  margin-right: 0;
+  display: block;
+  margin-bottom: 10px;
 }
 
 a {
   text-decoration: none;
   color: #333;
   padding: 5px;
+}
+
+a:hover {
+  background-color: darkgray; /* Ändere die Hintergrundfarbe auf dunkelgrau bei Hover */
 }
 
 a.router-link-active {
